@@ -1,8 +1,16 @@
-*Notes* - I used Wireshark within a GNS3 topology to capture and analyze network traffic between a PC and a Linux server (IP: 10.1.1.100). I began by capturing traffic between the PC and the switch, filtering specifically for HTTP traffic. After opening a web browser on the PC to access the server’s IP address, Wireshark captured the HTTP GET request and the server's HTTP 200 OK response, showcasing a simple webpage hosted on the server.
+Notes - I used Wireshark within a GNS3 topology (file attached to the main branch) to capture and analyze network traffic between a PC and a Linux server (IP: 10.1.1.100). I began by capturing traffic between the PC and the switch, filtering specifically for HTTP traffic. After opening a web browser on the PC to access the server’s IP address, Wireshark captured the HTTP GET request and the server's HTTP 200 OK response, showcasing a simple webpage hosted on the server.
 
 The analysis covered various OSI model layers, explaining the concept of frames at Layer 2, packets at Layer 3 (with IP addresses), and segments at Layer 4 (with TCP port numbers). I also examined the captured Ethernet II frames, which are the most common type of Ethernet frames.
 
-By examining the HTTP traffic in detail, I could see the actual data being transferred, including the webpage content and images. I also learned how to export specific data, such as images, from the Wireshark capture.
+By examining the HTTP traffic in detail, I could see the actual data(in clear) being transferred, including the webpage content and images. I also learned how to export specific data, such as images, from the Wireshark capture. (using export packet capture option)
 
 
+-----
 
+When using Wireshark to capture network traffic, I need to be careful about where I capture to ensure I'm seeing the right data. For example, if PC1 opens a browser and connects to a server, I need to capture at the correct point in the network. Capturing in the wrong spot might show unrelated traffic, like EIGRP or spanning-tree protocols, but not the HTTP traffic I’m looking for.
+
+If I filter for HTTP after opening a browser to the server's IP, I might not see any traffic because it could be bypassing the capture point. However, DNS queries are visible if the router is set up as a DNS server. I can confirm the router’s MAC and IP addresses using Wireshark and Cisco commands, seeing that the DNS request is routed correctly.
+
+Switches don't flood traffic once they know the MAC addresses involved, meaning direct communication between the client and server won't appear in my capture unless I mirror a port on the switch or use a network tap. To properly see the traffic, I must ensure my capturing device is in the right place in the network. In the next step, I’ll set up a port mirror to capture the necessary traffic.
+
+Refer to pcap capture 1,2,3 files. Using Wireshark to analyze the traffic.
