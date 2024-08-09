@@ -1,0 +1,5 @@
+#Notes# - I used Wireshark within a GNS3 topology to capture and analyze network traffic between a PC and a Linux server (IP: 10.1.1.100). I began by capturing traffic between the PC and the switch, filtering specifically for HTTP traffic. After opening a web browser on the PC to access the server’s IP address, Wireshark captured the HTTP GET request and the server's HTTP 200 OK response, showcasing a simple webpage hosted on the server.
+
+The analysis covered various OSI model layers, explaining the concept of frames at Layer 2, packets at Layer 3 (with IP addresses), and segments at Layer 4 (with TCP port numbers). I also examined the captured Ethernet II frames, which are the most common type of Ethernet frames.
+
+By examining the HTTP traffic in detail, I could see the actual data being transferred, including the webpage content and images. I also learned how to export specific data, such as images, from the Wireshark capture.
