@@ -13,4 +13,4 @@ If I filter for HTTP after opening a browser to the server's IP, I might not see
 
 Switches don't flood traffic once they know the MAC addresses involved, meaning direct communication between the client and server won't appear in my capture unless I mirror a port on the switch or use a network tap. To properly see the traffic, I must ensure my capturing device is in the right place in the network. In the next step, I’ll set up a port mirror to capture the necessary traffic.
 
-Refer to pcap capture 1,2,3 files. Using Wireshark to analyze the traffic.
+Refer to pcap 1,2,3 files. Using Wireshark to analyze the traffic.
